@@ -1,0 +1,69 @@
+unit uEstado;
+
+interface
+
+type Estado = class
+  private
+    codigo: integer;
+    descricao: string;
+    uf: string;
+
+  public
+    constructor criaObjeto;
+
+    procedure setCodigo(pCodigo: integer);
+    procedure setDescricao(pDescricao: string);
+    procedure setUf(pUf: string);
+
+    function getCodigo: integer;
+    function getDescricao: string;
+    function getUf: string;
+
+    destructor destroy;
+end;
+
+implementation
+
+{ Estado }
+
+constructor Estado.criaObjeto;
+begin
+
+end;
+
+destructor Estado.destroy;
+begin
+
+end;
+
+function Estado.getCodigo: integer;
+begin
+
+end;
+
+function Estado.getDescricao: string;
+begin
+
+end;
+
+function Estado.getUf: string;
+begin
+
+end;
+
+procedure Estado.setCodigo(pCodigo: integer);
+begin
+
+end;
+
+procedure Estado.setDescricao(pDescricao: string);
+begin
+
+end;
+
+procedure Estado.setUf(pUf: string);
+begin
+
+end;
+
+end.

@@ -1,0 +1,19 @@
+program Project1;
+
+uses
+  Vcl.Forms,
+  uGerente in 'uGerente.pas' {Form1},
+  uPais in 'uPais.pas',
+  uEstado in 'uEstado.pas',
+  uCidade in 'uCidade.pas',
+  uCadastroCidade in 'Views\uCadastroCidade.pas' {frmCadastroCidade};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmCadastroCidade, frmCadastroCidade);
+  Application.Run;
+end.

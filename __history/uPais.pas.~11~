@@ -1,0 +1,75 @@
+unit uPais;
+
+interface
+
+uses uEstado;
+type Pais = class
+
+  private
+    codigo: integer;
+    descricao: string[100];
+    unEstado: Estado;
+
+  public
+    constructor CriaObjeto;
+
+    procedure setCodigo(pCodigo: integer);
+    procedure setDescricao(pDescricao: string);
+    procedure setEstado(pEstado: Estado);
+
+    function getCodigo: integer;
+    function getDescricao: string;
+    function getEstado: Estado;
+    destructor destroy;
+
+
+
+
+end;
+implementation
+
+{ Pais }
+
+constructor Pais.CriaObjeto;
+begin
+  codigo := 0;
+  descricao := '';
+end;
+
+destructor Pais.destroy;
+begin
+  unEstado.destroy;
+end;
+
+function Pais.getCodigo: integer;
+begin
+  result := codigo;
+end;
+
+function Pais.getDescricao: string;
+begin
+  result := descricao;
+end;
+
+function Pais.getEstado: Estado;
+begin
+  result := unEstado;
+end;
+
+procedure Pais.setCodigo(pCodigo: integer);
+begin
+  codigo := pCodigo;
+end;
+
+procedure Pais.setDescricao(pDescricao: string);
+begin
+  descricao := pDescricao;
+end;
+
+procedure Pais.setEstado(pEstado: Estado);
+begin
+  unEstado := pEstado;
+end;
+
+end.
+

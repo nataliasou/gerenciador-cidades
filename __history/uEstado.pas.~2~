@@ -1,0 +1,19 @@
+unit uEstado;
+
+interface
+
+type Estado = class
+  private
+    codigo: integer;
+    descricao: string;
+    uf: string;
+
+  public
+    constructor criaObjeto;
+
+    destructor destroy;
+end;
+
+implementation
+
+end.

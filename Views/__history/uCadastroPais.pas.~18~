@@ -1,0 +1,76 @@
+unit uCadastroPais;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, uCidade,
+  uPais, uDM;
+
+type
+  TfrmCadastroPais = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    editCodigo: TEdit;
+    editPais: TEdit;
+    btnSalvar: TButton;
+    btnVoltar: TButton;
+    procedure btnVoltarClick(Sender: TObject);
+    procedure btnSalvarClick(Sender: TObject);
+  private
+    { Private declarations }
+    unCidade: Cidade;
+    unPais: Pais;
+    unTDataModule1:  TDataModule1;
+  public
+    { Public declarations }
+    procedure conhecaObjeto(pPais: Pais; pTDataModule1:  TDataModule1);
+  end;
+
+var
+  frmCadastroPais: TfrmCadastroPais;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmCadastroPais.btnSalvarClick(Sender: TObject);
+begin
+  unPais.setCodigo(StrToInt(self.editCodigo.Text));
+  unPais.setDescricao(self.editPais.Text);
+
+  // Verifica se é um registro novo antes de inserir
+  unTDataModule1.dSetPais.Close;
+  unTDataModule1.dSetPais.Open;
+
+  // Verifica se tem transaction ativa
+  if not unTDataModule1.trans.Active then
+      // Ativa a transação
+      unTDataModule1.trans.StartTransaction;
+
+  if unPais.getCodigo = 0 then
+    unTDataModule1.dSetPais.Insert
+  else
+    unTDataModule1.dSetPais.Edit;
+
+    unTDataModule1.dSetPaisIDPAIS.Value := unPais.getCodigo;
+    unTDataModule1.dSetPaisPAIS.Value := unPais.getDescricao;
+
+    unTDataModule1.dSetPais.Post;
+    unTDataModule1.trans.Commit;
+
+end;
+
+procedure TfrmCadastroPais.btnVoltarClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmCadastroPais.conhecaObjeto(pPais: Pais;
+  pTDataModule1: TDataModule1);
+begin
+  unPais := pPais;
+  unTDataModule1 := pTDataModule1;
+end;
+
+end.

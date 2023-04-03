@@ -1,0 +1,35 @@
+object DataModule1: TDataModule1
+  OldCreateOrder = False
+  Height = 259
+  Width = 428
+  object Banco: TIBDatabase
+    Connected = True
+    DatabaseName = 'C:\Users\programacao04\Desktop\DB\DB_PAISES.FDB'
+    Params.Strings = (
+      'user_name=SYSDBA'
+      'password=masterkey'
+      'lc_ctype=WIN1252')
+    LoginPrompt = False
+    ServerType = 'IBServer'
+    Left = 56
+    Top = 48
+  end
+  object trans: TIBTransaction
+    Active = True
+    DefaultDatabase = Banco
+    Left = 128
+    Top = 48
+  end
+  object dSetPais: TIBDataSet
+    BufferChunks = 1000
+    CachedUpdates = False
+    ParamCheck = True
+    UniDirectional = False
+    Left = 208
+    Top = 48
+  end
+  object DataSource1: TDataSource
+    Left = 280
+    Top = 48
+  end
+end

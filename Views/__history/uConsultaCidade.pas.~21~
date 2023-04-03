@@ -1,0 +1,117 @@
+unit uConsultaCidade;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCadastroCidade, uCidade, uDM, Data.DB,
+  Vcl.Grids, Vcl.DBGrids, Vcl.StdCtrls;
+
+type
+  TfrmConsultaCidade = class(TForm)
+    Label1: TLabel;
+    editConsulta: TEdit;
+    btnBuscar: TButton;
+    dbgridCidade: TDBGrid;
+    btnIncluir: TButton;
+    btnEditar: TButton;
+    btnExcluir: TButton;
+    btnVoltar: TButton;
+    procedure btnIncluirClick(Sender: TObject);
+    procedure btnEditarClick(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure btnVoltarClick(Sender: TObject);
+    procedure btnExcluirClick(Sender: TObject);
+    procedure btnBuscarClick(Sender: TObject);
+  private
+    { Private declarations }
+    unCidade: Cidade;
+    unDM: TDataModule1;
+    unTfrmCadastroCidade: TfrmCadastroCidade;
+    procedure mostrarFormularioDeCadastro;
+  public
+    { Public declarations }
+    procedure conhecaObjeto(pCidade: Cidade; pDM: TDataModule1);
+  end;
+
+var
+  frmConsultaCidade: TfrmConsultaCidade;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmConsultaCidade.btnBuscarClick(Sender: TObject);
+begin
+  unDm.dSetCidade.Close;
+  if editConsulta.Text = '' then
+    unDM.dSetCidade.SelectSQL.Text := 'select * from CIDADE'
+  else
+    unDM.dSetCidade.SelectSQL.Text := 'select * from CIDADE WHERE cidade=''' + editConsulta.Text + '''';
+  unDM.dSetCidade.Open;
+
+  self.dbgridCidade.DataSource := unDM.dsCidade;
+end;
+
+procedure TfrmConsultaCidade.btnEditarClick(Sender: TObject);
+begin
+  self.mostrarFormularioDeCadastro;
+end;
+
+procedure TfrmConsultaCidade.btnExcluirClick(Sender: TObject);
+var idDeletar: integer;
+begin
+  idDeletar := dbgridCidade.Fields[0].Value;
+  unDM.dSetCidade.Close;
+  unDM.dSetCidade.Open;
+
+  // Verifica se tem transaction ativa
+  if not unDM.trans.Active then
+      // Ativa a transação
+      unDM.trans.StartTransaction;
+
+  unDM.dSetCidade.First;
+  while not unDM.dSetCidade.EOF do
+  begin
+  if unDM.dSetCidade['IDCIDADE'] = idDeletar then
+    unDM.dSetCidade.Delete
+  else
+    unDM.dSetCidade.Next;
+  end;
+end;
+
+procedure TfrmConsultaCidade.btnIncluirClick(Sender: TObject);
+begin
+  self.mostrarFormularioDeCadastro;
+end;
+
+procedure TfrmConsultaCidade.btnVoltarClick(Sender: TObject);
+begin
+Close;
+end;
+
+procedure TfrmConsultaCidade.conhecaObjeto(pCidade: Cidade; pDM: TDataModule1);
+begin
+  unCidade := pCidade;
+  unDM := pDM;
+end;
+
+
+procedure TfrmConsultaCidade.FormShow(Sender: TObject);
+begin
+
+  unDM.dSetCidade.Close;
+  unDM.dSetCidade.SelectSQL.Text := 'SELECT * FROM CIDADE';
+  unDM.dSetCidade.Open;
+
+  self.dbgridCidade.DataSource := unDM.dsCidade;
+end;
+
+procedure TfrmConsultaCidade.mostrarFormularioDeCadastro;
+begin
+  unTfrmCadastroCidade :=  TfrmCadastroCidade.Create(nil);
+  unTfrmCadastroCidade.conhecaObjeto(unCidade, unDM);
+  unTfrmCadastroCidade.ShowModal;
+end;
+
+end.

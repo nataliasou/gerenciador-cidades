@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2021/01/22 08:33:30.000.578,=C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/06/09 12:06:09.000.278,=C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2021/06/09 12:06:09.000.478,=C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2021/06/09 12:06:13.000.836,=C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2023/03/28 13:44:47.000.881,=C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/28 13:45:31.000.846,C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\Users\programacao04\Desktop\Curso Delphi\uGerente.dfm</Transaction>
+    <Transaction>2023/03/28 13:45:31.000.846,C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\programacao04\Desktop\Curso Delphi\uGerente.pas</Transaction>
+    <Transaction>2023/03/28 13:45:38.000.598,=C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/03/28 13:45:47.000.457,C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\programacao04\Desktop\Curso Delphi\uPais.pas</Transaction>
+    <Transaction>2023/03/28 13:46:14.000.314,C:\Users\programacao04\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\programacao04\Desktop\Curso Delphi\Project1.dproj</Transaction>
+    <Transaction>2023/03/28 14:30:32.000.231,=C:\Users\programacao04\Desktop\Curso Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/03/28 14:31:38.000.456,C:\Users\programacao04\Desktop\Curso Delphi\uEstado.pas=C:\Users\programacao04\Desktop\Curso Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/03/28 15:38:05.000.536,=C:\Users\programacao04\Desktop\Curso Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/03/28 15:38:12.000.466,C:\Users\programacao04\Desktop\Curso Delphi\uCidade.pas=C:\Users\programacao04\Desktop\Curso Delphi\Unit1.pas</Transaction>
+    <Transaction>2023/03/28 17:38:22.000.700,=C:\Users\programacao04\Desktop\Curso Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/03/28 17:39:06.000.104,=C:\Users\programacao04\Desktop\Curso Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/03/28 17:40:19.000.168,C:\Users\programacao04\Desktop\Curso Delphi\Views\uCadastroCidade.dfm=C:\Users\programacao04\Desktop\Curso Delphi\Unit2.dfm</Transaction>
+    <Transaction>2023/03/28 17:40:19.000.168,C:\Users\programacao04\Desktop\Curso Delphi\Views\uCadastroCidade.pas=C:\Users\programacao04\Desktop\Curso Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/03/29 13:42:34.000.096,=C:\Users\programacao04\Desktop\Curso Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/03/29 13:43:32.000.418,C:\Users\programacao04\Desktop\Curso Delphi\Unit2.pas=C:\Users\programacao04\Desktop\Curso Delphi\Views\uCadastroPais.pas</Transaction>
+    <Transaction>2023/03/29 13:43:32.000.418,C:\Users\programacao04\Desktop\Curso Delphi\Unit2.dfm=C:\Users\programacao04\Desktop\Curso Delphi\Views\uCadastroPais.dfm</Transaction>
+    <Transaction>2023/03/29 14:04:20.000.590,=C:\Users\programacao04\Desktop\Curso Delphi\Unit2.pas</Transaction>
+    <Transaction>2023/03/29 14:05:16.000.101,C:\Users\programacao04\Desktop\Curso Delphi\Unit2.dfm=C:\Users\programacao04\Desktop\Curso Delphi\Views\uCadastroEstado.dfm</Transaction>
+    <Transaction>2023/03/29 14:05:16.000.101,C:\Users\programacao04\Desktop\Curso Delphi\Unit2.pas=C:\Users\programacao04\Desktop\Curso Delphi\Views\uCadastroEstado.pas</Transaction>
+    <Transaction>2023/03/29 17:42:18.000.567,=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.pas</Transaction>
+    <Transaction>2023/03/29 17:57:32.000.890,C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.dfm=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Views\uConsultaPais.dfm</Transaction>
+    <Transaction>2023/03/29 17:57:32.000.890,C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.pas=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Views\uConsultaPais.pas</Transaction>
+    <Transaction>2023/03/30 14:32:15.000.421,=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit1.pas</Transaction>
+    <Transaction>2023/03/30 14:33:12.000.281,C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\uDM.pas=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit1.pas</Transaction>
+    <Transaction>2023/03/30 14:33:12.000.281,C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\uDM.dfm=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit1.dfm</Transaction>
+    <Transaction>2023/03/31 13:37:54.000.170,=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.pas</Transaction>
+    <Transaction>2023/03/31 13:38:53.000.306,C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Views\uConsultaEstado.dfm=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.dfm</Transaction>
+    <Transaction>2023/03/31 13:38:53.000.306,C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Views\uConsultaEstado.pas=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.pas</Transaction>
+    <Transaction>2023/03/31 14:26:33.000.766,=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.pas</Transaction>
+    <Transaction>2023/03/31 14:26:56.000.335,C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Views\uConsultaCidade.dfm=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.dfm</Transaction>
+    <Transaction>2023/03/31 14:26:56.000.335,C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Views\uConsultaCidade.pas=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.pas</Transaction>
+    <Transaction>2023/03/31 15:15:08.000.292,=C:\Users\programacao04\Desktop\Curso Delphi\Projeto de cadastro de países\Unit2.pas</Transaction>
+  </Transactions>
+</BorlandProject>

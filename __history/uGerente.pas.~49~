@@ -1,0 +1,150 @@
+unit uGerente;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uCidade, uEstado, uPais, Vcl.StdCtrls, Vcl.Menus,
+  uCadastroCidade, uCadastroPais, uCadastroEstado, uConsultaPais, uDM, uConsultaEstado;
+
+type
+  TForm1 = class(TForm)
+    btnGravar: TButton;
+    btnRecuperar: TButton;
+    editCodigo: TEdit;
+    editDescricao: TEdit;
+    editCodigo2: TEdit;
+    editDescricao2: TEdit;
+    editCodigoEstado: TEdit;
+    editDescricaoEstado: TEdit;
+    editUf: TEdit;
+    editCodigoEstado2: TEdit;
+    editDescricaoEstado2: TEdit;
+    editUf2: TEdit;
+    editCodigoPais: TEdit;
+    editDescricaoPais: TEdit;
+    editCodigoPais2: TEdit;
+    editDescricaoPais2: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    MainMenu1: TMainMenu;
+    Cadastro1: TMenuItem;
+    Cidade1: TMenuItem;
+    Estado1: TMenuItem;
+    Pas1: TMenuItem;
+    btnEvento: TButton;
+    Edit1: TEdit;
+    Sair1: TMenuItem;
+    procedure btnGravarClick(Sender: TObject);
+    procedure btnRecuperarClick(Sender: TObject);
+    procedure Cidade1Click(Sender: TObject);
+    procedure Pas1Click(Sender: TObject);
+    procedure Estado1Click(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+    unCidade : Cidade;
+    unEstado: Estado;
+    unPais: Pais;
+
+    unTfrmCadastroCidade: TfrmCadastroCidade;
+    unTfrmCadastroPais: TfrmCadastroPais;
+    unTfrmCadastroEstado: TfrmCadastroEstado;
+
+    unTfrmConsultaPais: TfrmConsultaPais;
+    unTfrmConsultaEstado: TfrmConsultaEstado;
+
+    unDM:  TDataModule1;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnGravarClick(Sender: TObject);
+begin
+  unCidade := Cidade.CriaObjeto;
+  unCidade.setCodigo(StrToInt(Self.editCodigo.Text));
+  unCidade.setDescricao(Self.editDescricao.Text);
+
+  unCidade.getEstado.setCodigo(StrToInt(Self.editCodigoEstado.Text));
+  unCidade.getEstado.setDescricao(Self.editDescricaoEstado.Text);
+  unCidade.getEstado.setUf(Self.editUf.Text);
+
+  unCidade.getEstado.getPais.setCodigo(StrToInt(Self.editCodigoPais.Text));
+  unCidade.getEstado.getPais.setDescricao(Self.editDescricaoPais.Text);
+
+end;
+
+procedure TForm1.btnRecuperarClick(Sender: TObject);
+begin
+  self.editCodigo2.Text := IntToStr(unCidade.getCodigo);
+  self.editDescricao2.Text := unCidade.getDescricao;
+
+  self.editCodigoEstado2.Text := IntToStr(unCidade.getEstado.getCodigo);
+  self.editDescricaoEstado2.Text := unCidade.getEstado.getDescricao;
+  self.editUf2.Text := unCidade.getEstado.getUf;
+
+  self.editCodigoPais2.Text := IntToStr(unCidade.getEstado.getPais.getCodigo);
+  self.editDescricaoPais2.Text := unCidade.getEstado.getPais.getDescricao;
+  unCidade.destroy;
+end;
+
+procedure TForm1.Cidade1Click(Sender: TObject);
+begin
+  unTfrmCadastroCidade := TfrmCadastroCidade.Create(nil);
+  unTfrmCadastroCidade.ShowModal;
+end;
+
+procedure TForm1.Estado1Click(Sender: TObject);
+begin
+  unTfrmConsultaEstado.ConhecaObjeto(unEstado, unDM);
+  unTfrmConsultaEstado.ShowModal;
+end;
+
+procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  unCidade.destroy;
+  unEstado.destroy;
+  unPais.destroy;
+  frmCadastroPais.Destroy;
+  unTfrmConsultaPais.Destroy;
+  unDM.Destroy;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+// Criação das instâncias
+  unCidade := Cidade.CriaObjeto;
+  unEstado := Estado.CriaObjeto;
+  unPais := Pais.CriaObjeto;
+  frmCadastroPais := TfrmCadastroPais.Create(nil);
+  unTfrmConsultaPais := TfrmConsultaPais.Create(nil);
+  unTfrmConsultaEstado := TfrmConsultaEstado.Create(nil);
+  unDM :=  TDataModule1.Create(nil);
+end;
+
+procedure TForm1.Pas1Click(Sender: TObject);
+begin
+  unTfrmConsultaPais.ConhecaObjeto(unPais, unDM);
+  unTfrmConsultaPais.ShowModal;
+end;
+
+procedure TForm1.Sair1Click(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

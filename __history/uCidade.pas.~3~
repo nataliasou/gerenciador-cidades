@@ -1,0 +1,54 @@
+unit uCidade;
+
+interface
+type cidade = class
+  private
+    codigo: integer;
+    descricao: string;
+  public
+  constructor criaObjeto;
+
+  procedure setCodigo(pCodigo: integer);
+  procedure setDescricao(pDescricao: string);
+
+  function getCodigo : integer;
+  function getDescricao: string;
+
+  destructor destroy;
+end;
+implementation
+
+{ cidade }
+
+constructor cidade.criaObjeto;
+begin
+  codigo := 0;
+  descricao := '';
+end;
+
+destructor cidade.destroy;
+begin
+
+end;
+
+function cidade.getCodigo: integer;
+begin
+
+end;
+
+function cidade.getDescricao: string;
+begin
+
+end;
+
+procedure cidade.setCodigo(pCodigo: integer);
+begin
+
+end;
+
+procedure cidade.setDescricao(pDescricao: string);
+begin
+
+end;
+
+end.

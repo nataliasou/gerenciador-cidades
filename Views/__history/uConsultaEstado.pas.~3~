@@ -1,0 +1,57 @@
+unit uConsultaEstado;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, uCadastroEstado, uEstado, uDM;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    editConsulta: TEdit;
+    btnBuscar: TButton;
+    dbgridEstado: TDBGrid;
+    btnIncluir: TButton;
+    btnEditar: TButton;
+    btnExcluir: TButton;
+    btnVoltar: TButton;
+    procedure btnIncluirClick(Sender: TObject);
+  private
+    { Private declarations }
+    unEstado: Estado;
+    unDM: TDataModule1;
+    unTfrmCadastroEstado: TfrmCadastroEstado;
+    procedure mostrarFormularioCadastro;
+  public
+    { Public declarations }
+    procedure conhecaObjeto(pEstado: Estado; pDM: TDataModule1);
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm2.btnIncluirClick(Sender: TObject);
+begin
+  self.mostrarFormularioDeCadastro;
+end;
+
+procedure TForm2.conhecaObjeto(pEstado: Estado; pDM: TDataModule1);
+begin
+  unEstado := pEstado;
+  unDM := pDM;
+end;
+
+procedure TForm2.mostrarFormularioCadastro;
+begin
+  unTfrmCadastroEstado := TfrmCadastroEstado.Create(nil);
+  unTfrmCadastroEstado.conhecaObjeto(unEstado, unDM);
+  unTfrmCadastroEstado.ShowModal;
+end;
+
+end.

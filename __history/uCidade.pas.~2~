@@ -1,0 +1,21 @@
+unit uCidade;
+
+interface
+type cidade = class
+  private
+    codigo: integer;
+    descricao: string;
+  public
+  constructor criaObjeto;
+
+  procedure setCodigo(pCodigo: integer);
+  procedure setDescricao(pDescricao: string);
+
+  function getCodigo : integer;
+  function getDescricao: string;
+
+  destructor destroy;
+end;
+implementation
+
+end.
